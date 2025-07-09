@@ -4,7 +4,10 @@
     "scripts": {
         "build": "vite build",
         "build:ssr": "vite build && vite build --ssr",
+        "build:worker": "WORKER_BUILD=true vite build",
         "dev": "vite",
+        "dev:worker": "wrangler dev --persist-to .wrangler/state",
+        "deploy:worker": "wrangler deploy",
         "format": "prettier --write resources/",
         "format:check": "prettier --check resources/",
         "lint": "eslint . --fix"
@@ -23,6 +26,7 @@
         "vue-tsc": "^2.2.4"
     },
     "dependencies": {
+        "@inertiajs/server": "^0.1.0",
         "@inertiajs/vue3": "^2.0.0",
         "@tailwindcss/vite": "^4.1.1",
         "@vitejs/plugin-vue": "^5.2.1",
@@ -39,6 +43,7 @@
         "typescript": "^5.2.2",
         "vite": "^6.2.0",
         "vue": "^3.5.13",
+        "wrangler": "^4.24.0",
         "ziggy-js": "^2.4.2"
     },
     "optionalDependencies": {

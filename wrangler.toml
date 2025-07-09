@@ -1,0 +1,14 @@
+name = "inertia-vue-cloudflare-ssr"
+main = "resources/js/worker.ts"
+compatibility_date = "2025-06-25"
+compatibility_flags = ["nodejs_compat"]
+logpush = true
+
+[observability.logs]
+enabled = true
+
+[build]
+command = "WORKER_BUILD=true npm run build"
+
+[vars]
+ENVIRONMENT = "production"
